@@ -1,0 +1,11 @@
+{
+    "model": "claude",
+    "context_path": "../claude/context.json",
+    "generation_style": "modular, production-grade",
+    "focus_areas": [
+        "machine learning pipelines",
+        "time series modeling",
+        "clean architecture",
+        "scalable backend integration"
+    ]
+}

@@ -1,0 +1,182 @@
+You are a senior full-stack engineer building a production-grade AI-powered stock trading web application.
+
+Project Name:
+AI Stock Trading Platform
+
+Architecture Requirements:
+- Backend: FastAPI (primary) + Flask (optional microservices if needed)
+- Frontend: React (modern UI with charts)
+- Database: MongoDB (NoSQL for user + trading data)
+- ML Integration: LSTM model for prediction
+- Real-time updates: WebSockets
+
+Project Structure:
+- backend/app/
+- backend/LSTM_Model/
+- frontend/
+- mcp/
+
+--------------------------------------------------
+
+1. BACKEND (FastAPI)
+
+Create a modular FastAPI backend with:
+
+Modules:
+- auth (JWT-based authentication)
+- trading (buy/sell logic, paper trading)
+- portfolio (user holdings, P&L)
+- market (live stock data)
+- prediction (connect LSTM model)
+- analytics (technical indicators)
+
+Folder Structure:
+backend/app/
+- main.py
+- api/v1/
+- services/
+- models/
+- schemas/
+- db/
+- core/
+
+--------------------------------------------------
+
+2. DATABASE (MongoDB)
+
+Use MongoDB for:
+
+Collections:
+- users
+- portfolios
+- trades
+- watchlists
+
+Requirements:
+- Use PyMongo or Motor (async)
+- Store:
+  - user credentials (hashed)
+  - trade history
+  - holdings
+  - predictions (optional caching)
+
+--------------------------------------------------
+
+3. REAL-TIME MARKET DATA
+
+Implement:
+
+- WebSocket endpoint in FastAPI
+- Stream live stock prices (mock or via API like Zerodha/Upstox/yfinance polling)
+
+Features:
+- Live price updates
+- Volume updates
+- Candlestick data feed
+
+--------------------------------------------------
+
+4. TRADING ENGINE
+
+Implement paper trading system:
+
+- Market orders
+- Limit orders
+- Stop-loss logic
+
+Functions:
+- execute_trade()
+- update_portfolio()
+- calculate_pnl()
+
+--------------------------------------------------
+
+5. ML INTEGRATION
+
+- Load LSTM model from:
+  backend/LSTM_Model/models/lstm_model.h5
+
+- Create:
+  prediction_service.py
+
+Function:
+predict_stock(symbol)
+
+Output:
+{
+  "prediction": 0 or 1,
+  "confidence": probability
+}
+
+--------------------------------------------------
+
+6. FRONTEND (React)
+
+Create modern trading UI:
+
+Pages:
+- Dashboard
+- Trading Screen
+- Portfolio
+- Login/Register
+
+Components:
+- Chart (candlestick)
+- Order Panel (buy/sell)
+- Watchlist
+- Prediction Widget
+
+Use:
+- Axios for API calls
+- WebSocket for live updates
+- Chart library (TradingView / Recharts / Chart.js)
+
+--------------------------------------------------
+
+7. REAL-TIME CHARTS
+
+- Implement candlestick charts
+- Support:
+  - multiple timeframes
+  - zoom and pan
+
+--------------------------------------------------
+
+8. AUTHENTICATION
+
+- JWT-based login system
+- Password hashing (bcrypt)
+- Secure routes
+
+--------------------------------------------------
+
+9. DEPLOYMENT SETUP
+
+Provide:
+
+- Dockerfile (backend + frontend)
+- docker-compose.yml
+- Environment variables (.env)
+
+--------------------------------------------------
+
+10. CODE QUALITY
+
+- Modular architecture
+- Clean separation of concerns
+- No hardcoding
+- Production-ready structure
+
+--------------------------------------------------
+
+11. OUTPUT REQUIREMENTS
+
+Generate:
+
+- Backend code (FastAPI + MongoDB + WebSockets)
+- Frontend code (React UI)
+- Integration with LSTM model
+- Deployment files (Docker)
+
+Do NOT include explanations.
+Only provide clean, structured, production-ready code.

@@ -1,0 +1,71 @@
+You are a senior machine learning engineer.
+
+Generate a complete LSTM-based stock prediction pipeline inside the following directory:
+
+backend/LSTM_Model/src/
+
+Requirements:
+
+1. Modular Structure:
+Create separate Python files:
+- data_loader.py
+- preprocess.py
+- feature_engineering.py
+- model.py
+- train.py
+- evaluate.py
+- predict.py
+
+2. Data Handling:
+- Use yfinance or CSV input
+- Load historical stock data
+- Focus on closing price
+- Compute daily returns
+
+3. Preprocessing:
+- Handle missing values
+- Normalize data using MinMaxScaler
+- Create binary labels:
+  1 = price goes up
+  0 = price goes down
+
+4. Feature Engineering:
+- Add optional technical indicators (moving average, RSI)
+- Prepare sliding window sequences (window size = 60)
+
+5. Model:
+- Build LSTM using TensorFlow/Keras
+- Include:
+  - 2 LSTM layers
+  - Dropout
+  - Dense output layer with sigmoid activation
+
+6. Training:
+- Train/test split
+- Use early stopping
+- Save model to:
+  backend/LSTM_Model/models/lstm_model.h5
+
+7. Evaluation:
+- Accuracy
+- Confusion matrix
+- Loss visualization
+
+8. Prediction:
+- Load saved model
+- Predict next-day movement
+- Return probability + class
+
+9. Code Quality:
+- Modular functions
+- Proper docstrings
+- Clean imports
+- No redundant code
+
+10. Future Integration:
+- Ensure predict.py can be called from FastAPI later
+
+Output:
+- Full code for all files
+- No explanations
+- Production-ready structure

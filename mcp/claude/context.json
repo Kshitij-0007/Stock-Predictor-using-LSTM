@@ -1,0 +1,33 @@
+{
+    "project_name": "AI Stock Trading Platform",
+    "goal": "Build a modular stock prediction system using LSTM integrated into a FastAPI backend and React frontend",
+    "architecture": {
+        "backend": "FastAPI (Python)",
+        "ml_engine": "TensorFlow/Keras LSTM",
+        "frontend": "React",
+        "database": "PostgreSQL (future phase)"
+    },
+    "ml_pipeline": {
+        "type": "time_series_prediction",
+        "target": "predict next-day stock direction (up/down)",
+        "input": "historical stock price data (NSE/BSE or Yahoo Finance)",
+        "window_size": 60,
+        "features": [
+            "closing price",
+            "returns",
+            "optional indicators (RSI, moving averages)"
+        ]
+    },
+    "code_style": {
+        "structure": "modular",
+        "separation": "strict separation of data, preprocessing, model, training, prediction",
+        "readability": "high",
+        "production_ready": true
+    },
+    "constraints": [
+        "no monolithic scripts",
+        "each function must have a single responsibility",
+        "code must be reusable and testable",
+        "use clear naming conventions"
+    ]
+}
