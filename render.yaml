@@ -1,0 +1,28 @@
+services:
+  # 1. The Python LSTM Engine
+  - type: web
+    name: trade-ai-neural-engine
+    env: docker
+    rootDir: backend
+    plan: free
+    region: singapore # Change to your preferred region
+    envVars:
+      - key: PYTHONUNBUFFERED
+        value: 1
+
+  # 2. The Java Frontend/API
+  - type: web
+    name: trade-ai-dashboard
+    env: docker
+    rootDir: spring-boot-backend
+    plan: free
+    region: singapore
+    envVars:
+      - key: AI_BRIDGE_URL
+        value: http://trade-ai-neural-engine:5000 # Internal networking
+      - key: SPRING_DATASOURCE_URL
+        sync: false # You will paste your Aiven/Railway MySQL URL here
+      - key: SPRING_DATASOURCE_USERNAME
+        sync: false
+      - key: SPRING_DATASOURCE_PASSWORD
+        sync: false
