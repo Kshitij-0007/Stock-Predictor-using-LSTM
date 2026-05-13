@@ -13,7 +13,7 @@ echo ===================================================
 echo [2/2] Starting Main Trading Platform (Java Spring Boot)...
 echo ===================================================
 :: Using the robust Java wrapper command from run-app.bat
-start "TRADE AI - Core Platform" cmd /k "cd spring-boot-backend && java -Dmaven.multiModuleProjectDirectory=. -cp .mvn/wrapper/maven-wrapper.jar org.apache.maven.wrapper.MavenWrapperMain spring-boot:run"
+start "TRADE AI - Core Platform" cmd /k "cd spring-boot-backend && java -Dmaven.multiModuleProjectDirectory=. -cp .mvn/wrapper/maven-wrapper.jar org.apache.maven.wrapper.MavenWrapperMain clean spring-boot:run"
 
 echo.
 echo ===================================================
