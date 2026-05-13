@@ -70,11 +70,11 @@ if __name__ == "__main__":
     else:
         print("--- Warning: Training on CPU ---")
         
-    # Run the pipeline for NIFTY over the last 15 years
+    # Run the pipeline for Reliance Stock over the last 10 years
     train_pipeline(
-        ticker="^NSEI", 
-        years=15, 
-        window_size=10, 
-        epochs=150, 
+        ticker="RELIANCE.NS", 
+        years=10, 
+        window_size=60, 
+        epochs=50, 
         batch_size=32
     )
